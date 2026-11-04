@@ -1,0 +1,7 @@
+{
+  "name": "Cova Decision Intelligence",
+  "description": "Executive business intelligence and decision-support platform, providing a connected management-level view across financial performance, customers, operations, cash and debt, and growth.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
