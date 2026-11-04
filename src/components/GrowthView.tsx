@@ -57,7 +57,7 @@ export const GrowthView: React.FC<GrowthViewProps> = ({
             <h1 className="font-editorial text-xl sm:text-2xl font-semibold text-stone-900 dark:text-stone-100">
               Growth Pipeline
             </h1>
-            <p className="text-xs text-stone-600 dark:text-stone-400 mt-1">
+            <p className="text-sm text-stone-600 dark:text-stone-400 mt-1">
               Active commercial development opportunities, capex requirements, and contract values.
             </p>
           </div>
@@ -76,43 +76,43 @@ export const GrowthView: React.FC<GrowthViewProps> = ({
         {/* Pipeline Summary Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-5">
           <div className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Total Pipeline Value</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Total Pipeline Value</span>
             <div className="font-editorial text-xl font-bold text-stone-900 dark:text-stone-100 mt-1">
               R15.6M
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">Across 4 active deals</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">Across 4 active deals</span>
           </div>
 
           <div className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Capital Required</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Capital Required</span>
             <div className="font-editorial text-xl font-bold text-stone-900 dark:text-stone-100 mt-1">
               R6.90M
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">Hardware capex required</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">Hardware capex required</span>
           </div>
 
           <div className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Weighted Target IRR</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Weighted Target IRR</span>
             <div className="font-editorial text-xl font-bold text-emerald-700 dark:text-emerald-400 mt-1">
               21.8%
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">Long-term unlevered IRR</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">Long-term unlevered IRR</span>
           </div>
 
           <div className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">DBSA Undrawn Headroom</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">DBSA Undrawn Headroom</span>
             <div className="font-editorial text-xl font-bold text-stone-900 dark:text-stone-100 mt-1">
               R4.80M
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">Approved debt capacity</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">Approved debt capacity</span>
           </div>
         </div>
 
         {/* Opportunity Table (Pipeline Facts First!) */}
         <div className="overflow-x-auto mt-4">
-          <table className="w-full text-left text-xs border-collapse min-w-[660px]">
+          <table className="w-full text-left text-sm border-collapse min-w-[660px]">
             <thead>
-              <tr className="border-b border-stone-200 dark:border-[#2b333e] text-stone-600 dark:text-stone-400 font-semibold uppercase tracking-wider text-[11px]">
+              <tr className="border-b border-stone-200 dark:border-[#2b333e] text-stone-600 dark:text-stone-400 font-semibold uppercase tracking-wider text-sm">
                 <th className="py-2.5 px-3">Opportunity</th>
                 <th className="py-2.5 px-3">Stage</th>
                 <th className="py-2.5 px-3 text-right">Contract Value</th>
@@ -131,12 +131,12 @@ export const GrowthView: React.FC<GrowthViewProps> = ({
                     {/* Opportunity */}
                     <td className="py-3 px-3 font-sans">
                       <div className="font-semibold text-stone-900 dark:text-stone-100">{opp.name}</div>
-                      <div className="text-[11px] text-stone-600 dark:text-stone-400">{opp.client}</div>
+                      <div className="text-sm text-stone-600 dark:text-stone-400">{opp.client}</div>
                     </td>
 
                     {/* Stage */}
                     <td className="py-3 px-3 font-sans">
-                      <span className="px-2 py-0.5 rounded bg-stone-100 dark:bg-[#1f252d] text-stone-700 dark:text-stone-300 border border-stone-200/60 dark:border-[#2b333e] text-[11px]">
+                      <span className="px-2 py-0.5 rounded bg-stone-100 dark:bg-[#1f252d] text-stone-700 dark:text-stone-300 border border-stone-200/60 dark:border-[#2b333e] text-sm">
                         {opp.stage}
                       </span>
                     </td>
@@ -159,7 +159,7 @@ export const GrowthView: React.FC<GrowthViewProps> = ({
                     {/* Risk / Readiness */}
                     <td className="py-3 px-3 text-center font-sans">
                       <span
-                        className={`px-2 py-0.5 rounded text-[11px] font-medium ${
+                        className={`px-2 py-0.5 rounded text-sm font-medium ${
                           opp.fundingFeasibility === 'Fully Funded'
                             ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/40'
                             : opp.fundingFeasibility === 'Feasible with Debt Draw'
@@ -181,7 +181,7 @@ export const GrowthView: React.FC<GrowthViewProps> = ({
         <div className="mt-8 pt-5 border-t border-stone-100 dark:border-[#262c34]">
           <div className="flex items-center gap-2 mb-3">
             <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-300">
+            <span className="text-sm font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-300">
               Analyze Pipeline in Cova Intelligence
             </span>
           </div>
@@ -192,7 +192,7 @@ export const GrowthView: React.FC<GrowthViewProps> = ({
                 key={i}
                 type="button"
                 onClick={() => onOpenIntelligence('Growth', question)}
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-stone-700 dark:text-stone-200 bg-stone-50 hover:bg-stone-100 dark:bg-[#1f252d] dark:hover:bg-[#29323d] border border-stone-200 dark:border-[#2b333e] transition cursor-pointer"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-stone-700 dark:text-stone-200 bg-stone-50 hover:bg-stone-100 dark:bg-[#1f252d] dark:hover:bg-[#29323d] border border-stone-200 dark:border-[#2b333e] transition cursor-pointer"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                 <span>{question}</span>

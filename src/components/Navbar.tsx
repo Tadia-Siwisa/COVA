@@ -49,10 +49,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   onToggleTheme,
 }) => {
   return (
-    <header className="sticky top-0 z-30 bg-[#fbfbfa]/95 dark:bg-[#121518]/95 backdrop-blur-md border-b border-stone-200/80 dark:border-[#262c34] transition-colors">
+    <header className="sm:sticky top-0 z-30 bg-[#fbfbfa]/95 dark:bg-[#121518]/95 backdrop-blur-md border-b border-stone-200/80 dark:border-[#262c34] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top utility bar */}
-        <div className="flex items-center justify-between py-3 border-b border-stone-100 dark:border-[#1e2329]">
+        <div className="flex flex-wrap items-center justify-between gap-3 py-3 border-b border-stone-100 dark:border-[#1e2329]">
           <div className="flex items-center gap-3">
             {/* Cova minimal circular intelligence mark */}
             <div
@@ -99,35 +99,35 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="font-editorial text-lg tracking-tight font-semibold text-stone-900 dark:text-stone-100">
                 Cova
               </span>
-              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-[#1a1f26] border border-stone-200/80 dark:border-[#28303a]">
+              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-sm font-medium text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-[#1a1f26] border border-stone-200/80 dark:border-[#28303a]">
                 Demo company • Simulated data
               </span>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="flex items-center gap-1 sm:gap-2.5">
             {/* Mobile-only demo label */}
-            <span className="sm:hidden inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-medium text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-[#1a1f26] border border-stone-200/80 dark:border-[#28303a]">
+            <span className="hidden items-center px-2 py-0.5 rounded-full text-sm font-medium text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-[#1a1f26] border border-stone-200/80 dark:border-[#28303a]">
               Demo
             </span>
 
             {/* Data interpretation subtle indicator */}
-            <div className="hidden md:flex items-center gap-2 text-xs text-stone-600 dark:text-stone-400 mr-1.5">
+            <div className="hidden md:flex items-center gap-2 text-sm text-stone-600 dark:text-stone-400 mr-1.5">
               <span
                 className={`w-1.5 h-1.5 rounded-full ${
                   hasUploadedFiles ? 'bg-emerald-500' : 'bg-stone-300 dark:bg-stone-600'
                 }`}
               />
               <span>
-                {hasUploadedFiles ? `September 2026 Ledger (${lastUpdated})` : 'Awaiting business files'}
+                {hasUploadedFiles ? `Sample period: ${lastUpdated}` : 'Awaiting business files'}
               </span>
             </div>
 
             {/* 1. Data Sources button */}
             <button
-              id="data-sources-btn"
+              id="data-sources-btn" aria-label="Data sources"
               onClick={onOpenDataSources}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-stone-700 dark:text-stone-200 bg-white dark:bg-[#1b2026] border border-stone-200/80 dark:border-[#2b333d] hover:bg-stone-50 dark:hover:bg-[#232932] transition cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-stone-700 dark:text-stone-200 bg-white dark:bg-[#1b2026] border border-stone-200/80 dark:border-[#2b333d] hover:bg-stone-50 dark:hover:bg-[#232932] transition cursor-pointer whitespace-nowrap"
               title="Inspect uploaded business documents & freshness status"
             >
               <Layers className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
@@ -139,9 +139,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* 2. Upload Files button */}
             <button
-              id="upload-files-btn"
+              id="upload-files-btn" aria-label="Upload files"
               onClick={onOpenUpload}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-stone-700 dark:text-stone-200 bg-white dark:bg-[#1b2026] border border-stone-200/80 dark:border-[#2b333d] hover:bg-stone-50 dark:hover:bg-[#232932] transition cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-stone-700 dark:text-stone-200 bg-white dark:bg-[#1b2026] border border-stone-200/80 dark:border-[#2b333d] hover:bg-stone-50 dark:hover:bg-[#232932] transition cursor-pointer whitespace-nowrap"
               title="Upload operational or financial documents"
             >
               <Upload className="w-3.5 h-3.5 text-stone-500 dark:text-stone-400" />
@@ -150,15 +150,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* 3. Open Actions button */}
             <button
-              id="open-actions-btn"
+              id="open-actions-btn" aria-label="Open actions"
               onClick={onOpenActions}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-stone-700 dark:text-stone-200 bg-white dark:bg-[#1b2026] border border-stone-200/80 dark:border-[#2b333d] hover:bg-stone-50 dark:hover:bg-[#232932] transition cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-stone-700 dark:text-stone-200 bg-white dark:bg-[#1b2026] border border-stone-200/80 dark:border-[#2b333d] hover:bg-stone-50 dark:hover:bg-[#232932] transition cursor-pointer whitespace-nowrap"
               title="View unresolved high-priority actions"
             >
               <CheckSquare className="w-3.5 h-3.5 text-stone-500 dark:text-stone-400" />
               <span>Open Actions</span>
               {hasUploadedFiles && openActionsCount > 0 && (
-                <span className="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] font-mono-numbers font-bold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30">
+                <span className="ml-0.5 px-1.5 py-0.2 rounded-full text-sm font-mono-numbers font-bold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30">
                   {openActionsCount}
                 </span>
               )}
@@ -191,7 +191,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={p.id}
                   id={`nav-perspective-${p.id}`}
                   onClick={() => onSelectPerspective(p.id)}
-                  className={`px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
+                  aria-current={isActive ? 'page' : undefined}
+                  className={`px-3 py-1.5 rounded-md text-sm sm:text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
                     isActive
                       ? 'bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 shadow-xs font-semibold'
                       : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100/70 dark:hover:bg-[#1e242b]'
@@ -208,7 +209,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="nav-cova-intelligence-btn"
               onClick={onOpenIntelligence}
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-all cursor-pointer whitespace-nowrap ml-4 ${
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm sm:text-sm font-medium transition-all cursor-pointer whitespace-nowrap ml-4 ${
                 isIntelligenceActive
                   ? 'bg-blue-900 text-white dark:bg-blue-600 dark:text-white shadow-xs font-semibold'
                   : 'text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100/70 dark:hover:bg-[#1e242b]'

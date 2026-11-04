@@ -48,7 +48,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
 
         {/* Header */}
         <div className="mb-4">
-          <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-md mb-2">
+          <div className="inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-md mb-2">
             <FileSpreadsheet className="w-3.5 h-3.5" />
             <span>Source & Calculation Trace</span>
           </div>
@@ -64,7 +64,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
 
         {/* Source Files Used */}
         <div className="mb-4 p-3.5 rounded-xl bg-stone-50 dark:bg-[#14171a] border border-stone-200/70 dark:border-[#242a32] space-y-2">
-          <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+          <div className="flex items-center justify-between text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
             <span>Calculated From</span>
             <span className="flex items-center gap-1 text-stone-400 lowercase font-normal">
               <Calendar className="w-3 h-3" />
@@ -76,7 +76,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
             {inspection.filesUsed.map((file, idx) => (
               <div
                 key={idx}
-                className="flex items-center justify-between text-xs py-1 px-2 rounded-lg bg-white dark:bg-[#1c222a] border border-stone-200/60 dark:border-[#2a333f]"
+                className="flex items-center justify-between text-sm py-1 px-2 rounded-lg bg-white dark:bg-[#1c222a] border border-stone-200/60 dark:border-[#2a333f]"
               >
                 <div className="flex items-center gap-2">
                   <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
@@ -84,14 +84,14 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
                     {file}
                   </span>
                 </div>
-                <span className="text-[11px] text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded-sm">
+                <span className="text-sm text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded-sm">
                   Verified
                 </span>
               </div>
             ))}
           </div>
 
-          <div className="pt-2 text-[11px] text-stone-500 dark:text-stone-400">
+          <div className="pt-2 text-sm text-stone-500 dark:text-stone-400">
             <strong className="text-stone-700 dark:text-stone-300">Fields used:</strong>{' '}
             {inspection.fieldsUsed.join(', ')}
           </div>
@@ -99,11 +99,11 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
 
         {/* Calculation Breakdown */}
         <div className="mb-5">
-          <div className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">
+          <div className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">
             How It Was Calculated
           </div>
 
-          <div className="rounded-xl border border-stone-200/80 dark:border-[#262c34] divide-y divide-stone-100 dark:divide-[#242a32] overflow-hidden text-xs bg-white dark:bg-[#181c20]">
+          <div className="rounded-xl border border-stone-200/80 dark:border-[#262c34] divide-y divide-stone-100 dark:divide-[#242a32] overflow-hidden text-sm bg-white dark:bg-[#181c20]">
             {inspection.formulaItems.map((item, idx) => (
               <div
                 key={idx}
@@ -115,7 +115,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
               >
                 <div className="flex items-center gap-2">
                   {item.sign && (
-                    <span className="w-4 text-center font-mono font-bold text-stone-400 dark:text-stone-500">
+                    <span className="w-4 text-center font-mono font-bold text-stone-400 dark:text-stone-400">
                       {item.sign}
                     </span>
                   )}
@@ -127,7 +127,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
           </div>
 
           {inspection.formulaNote && (
-            <p className="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed italic">
+            <p className="text-sm text-stone-500 dark:text-stone-400 mt-2 leading-relaxed italic">
               {inspection.formulaNote}
             </p>
           )}
@@ -138,16 +138,16 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
           <button
             type="button"
             onClick={() => setShowLineage(!showLineage)}
-            className="inline-flex items-center gap-1.5 text-xs text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 font-medium cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-sm text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 font-medium cursor-pointer"
           >
             <GitCommit className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
             <span>{showLineage ? 'Hide Data Lineage Chain' : 'View Full Data Lineage Chain'}</span>
           </button>
 
           {showLineage && (
-            <div className="mt-2.5 p-3 rounded-xl bg-stone-50 dark:bg-[#14171a] border border-stone-200/70 dark:border-[#262c34] text-xs space-y-2 animate-in fade-in duration-100">
+            <div className="mt-2.5 p-3 rounded-xl bg-stone-50 dark:bg-[#14171a] border border-stone-200/70 dark:border-[#262c34] text-sm space-y-2 animate-in fade-in duration-100">
               <div className="flex items-start gap-2">
-                <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-[#222831] flex items-center justify-center text-[10px] font-bold text-stone-600 dark:text-stone-400 shrink-0 mt-0.5">
+                <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-[#222831] flex items-center justify-center text-sm font-bold text-stone-600 dark:text-stone-400 shrink-0 mt-0.5">
                   1
                 </span>
                 <div>
@@ -159,7 +159,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
               </div>
 
               <div className="flex items-start gap-2">
-                <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-[#222831] flex items-center justify-center text-[10px] font-bold text-stone-600 dark:text-stone-400 shrink-0 mt-0.5">
+                <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-[#222831] flex items-center justify-center text-sm font-bold text-stone-600 dark:text-stone-400 shrink-0 mt-0.5">
                   2
                 </span>
                 <div>
@@ -171,7 +171,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
               </div>
 
               <div className="flex items-start gap-2">
-                <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-[#222831] flex items-center justify-center text-[10px] font-bold text-stone-600 dark:text-stone-400 shrink-0 mt-0.5">
+                <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-[#222831] flex items-center justify-center text-sm font-bold text-stone-600 dark:text-stone-400 shrink-0 mt-0.5">
                   3
                 </span>
                 <div>
@@ -183,7 +183,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
               </div>
 
               <div className="flex items-start gap-2">
-                <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-[#222831] flex items-center justify-center text-[10px] font-bold text-stone-600 dark:text-stone-400 shrink-0 mt-0.5">
+                <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-[#222831] flex items-center justify-center text-sm font-bold text-stone-600 dark:text-stone-400 shrink-0 mt-0.5">
                   4
                 </span>
                 <div>
@@ -205,7 +205,7 @@ export const MetricSourceModal: React.FC<MetricSourceModalProps> = ({
               onClose();
               onOpenSpreadsheet(inspection.targetSheetId, inspection.highlightRowIds);
             }}
-            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold text-xs sm:text-sm hover:bg-stone-800 dark:hover:bg-white shadow-xs transition cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold text-sm sm:text-sm hover:bg-stone-800 dark:hover:bg-white shadow-xs transition cursor-pointer"
           >
             <FileSpreadsheet className="w-4 h-4" />
             <span>Inspect Underlying Source Data</span>

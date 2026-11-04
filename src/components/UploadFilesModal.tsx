@@ -180,13 +180,13 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
 
         {/* Header */}
         <div className="mb-4">
-          <span className="text-xs font-semibold uppercase tracking-wider text-blue-800 dark:text-blue-400 block mb-1">
+          <span className="text-sm font-semibold uppercase tracking-wider text-blue-800 dark:text-blue-400 block mb-1">
             Data Provenance & Ingestion
           </span>
           <h2 className="font-editorial text-2xl font-semibold tracking-tight text-stone-900 dark:text-stone-100">
             Upload Business Documents — Demo
           </h2>
-          <p className="text-xs sm:text-sm text-stone-500 dark:text-stone-400 mt-1">
+          <p className="text-sm sm:text-sm text-stone-500 dark:text-stone-400 mt-1">
             Demo only: selected file names illustrate the upload workflow. File contents are not read or uploaded, and completing this flow loads fictional sample data.
           </p>
         </div>
@@ -221,13 +221,13 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
                 <UploadCloud className="w-5 h-5 text-blue-700 dark:text-blue-400" />
               </div>
 
-              <p className="text-xs sm:text-sm font-medium text-stone-800 dark:text-stone-200">
+              <p className="text-sm sm:text-sm font-medium text-stone-800 dark:text-stone-200">
                 Drag and drop company spreadsheets here, or{' '}
                 <span className="text-blue-700 dark:text-blue-400 underline font-semibold">
                   browse files
                 </span>
               </p>
-              <p className="text-[11px] text-stone-500 dark:text-stone-400 mt-1">
+              <p className="text-sm text-stone-500 dark:text-stone-400 mt-1">
                 Supports Excel (.xlsx, .xls) and CSV (.csv) trial balances, registers & telemetry
               </p>
             </div>
@@ -235,20 +235,20 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
             {/* Quick action: Load September 2026 Company Package */}
             <div className="p-4 rounded-xl border border-stone-200/90 dark:border-[#2b333e] bg-stone-50/60 dark:bg-[#161a1f] space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-300">
+                <span className="text-sm font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-300">
                   Ready Package: September 2026 Demo Company
                 </span>
-                <span className="text-[11px] font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
+                <span className="text-sm font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
                   4 files · 12.2 MB
                 </span>
               </div>
-              <p className="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+              <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed">
                 Includes General_Ledger.xlsx, Customer_Invoices.xlsx, Bank_Transactions.xlsx, and Hourly_Energy_Operations.xlsx.
               </p>
               <button
                 type="button"
                 onClick={() => startProcessingQueue(defaultPackage)}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold text-xs hover:bg-stone-800 dark:hover:bg-white transition cursor-pointer mt-1"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold text-sm hover:bg-stone-800 dark:hover:bg-white transition cursor-pointer mt-1"
               >
                 <Sparkles className="w-3.5 h-3.5 text-blue-400 dark:text-blue-300" />
                 <span>Process September 2026 Datasets</span>
@@ -260,7 +260,7 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
         {/* Processing State & Detailed Business Area Updates */}
         {filesQueue.length > 0 && (
           <div className="flex-1 overflow-y-auto space-y-3 pr-1">
-            <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 pb-1 border-b border-stone-100 dark:border-[#22272e]">
+            <div className="flex items-center justify-between text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 pb-1 border-b border-stone-100 dark:border-[#22272e]">
               <span>
                 {isProcessing ? 'Ingesting & Validating Files...' : 'Processing Complete'}
               </span>
@@ -272,7 +272,7 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
             {filesQueue.map((file) => (
               <div
                 key={file.id}
-                className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#14171a] border border-stone-200/80 dark:border-[#262d36] text-xs space-y-2"
+                className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#14171a] border border-stone-200/80 dark:border-[#262d36] text-sm space-y-2"
               >
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
@@ -280,26 +280,26 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
                     <span className="font-mono font-medium text-stone-900 dark:text-stone-100 truncate">
                       {file.name}
                     </span>
-                    <span className="text-[11px] text-stone-400 font-mono-numbers">
+                    <span className="text-sm text-stone-400 font-mono-numbers">
                       {file.size}
                     </span>
                   </div>
 
                   <div className="shrink-0">
                     {file.state === 'Uploading' && (
-                      <span className="inline-flex items-center gap-1 text-[11px] text-stone-500 dark:text-stone-400 font-medium">
+                      <span className="inline-flex items-center gap-1 text-sm text-stone-500 dark:text-stone-400 font-medium">
                         <Loader2 className="w-3 h-3 animate-spin" />
                         Uploading
                       </span>
                     )}
                     {file.state === 'Processing' && (
-                      <span className="inline-flex items-center gap-1 text-[11px] text-amber-700 dark:text-amber-400 font-medium">
+                      <span className="inline-flex items-center gap-1 text-sm text-amber-700 dark:text-amber-400 font-medium">
                         <Loader2 className="w-3 h-3 animate-spin" />
                         Processing
                       </span>
                     )}
                     {file.state === 'Processed' && (
-                      <span className="inline-flex items-center gap-1 text-[11px] text-emerald-700 dark:text-emerald-400 font-medium bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
+                      <span className="inline-flex items-center gap-1 text-sm text-emerald-700 dark:text-emerald-400 font-medium bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
                         <CheckCircle2 className="w-3 h-3" />
                         Simulation complete
                       </span>
@@ -310,14 +310,14 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
                 {/* Updated Business Areas Breakdown */}
                 {file.state === 'Processed' && (
                   <div className="pt-2 border-t border-stone-200/50 dark:border-[#202630] space-y-1">
-                    <span className="text-[11px] font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wider block">
+                    <span className="text-sm font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wider block">
                       Updated:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {file.updatedAreas.map((area, idx) => (
                         <span
                           key={idx}
-                          className="inline-flex items-center text-[11px] font-medium text-stone-700 dark:text-stone-300 bg-white dark:bg-[#1f252f] px-2 py-0.5 rounded-md border border-stone-200/80 dark:border-[#2e3744]"
+                          className="inline-flex items-center text-sm font-medium text-stone-700 dark:text-stone-300 bg-white dark:bg-[#1f252f] px-2 py-0.5 rounded-md border border-stone-200/80 dark:border-[#2e3744]"
                         >
                           {area}
                         </span>
@@ -330,7 +330,7 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
 
             {allFinished && (
               <div className="pt-3 space-y-2">
-                <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-800 dark:text-emerald-300 text-center">
+                <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-sm font-medium text-emerald-800 dark:text-emerald-300 text-center">
                   All 4 business records parsed without structural errors. Financial and operational models ready to update.
                 </div>
 
@@ -338,7 +338,7 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
                   <button
                     type="button"
                     onClick={handleResetModal}
-                    className="flex-1 py-2 rounded-xl text-xs font-medium text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-[#222831] cursor-pointer"
+                    className="flex-1 py-2 rounded-xl text-sm font-medium text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-[#222831] cursor-pointer"
                   >
                     Upload Other Files
                   </button>
@@ -346,7 +346,7 @@ export const UploadFilesModal: React.FC<UploadFilesModalProps> = ({
                   <button
                     type="button"
                     onClick={handleApplyToSystem}
-                    className="flex-1 py-2.5 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold text-xs hover:bg-stone-800 dark:hover:bg-white transition cursor-pointer flex items-center justify-center gap-1.5 shadow-xs"
+                    className="flex-1 py-2.5 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold text-sm hover:bg-stone-800 dark:hover:bg-white transition cursor-pointer flex items-center justify-center gap-1.5 shadow-xs"
                   >
                     <span>Build & Open Business View</span>
                     <ArrowRight className="w-3.5 h-3.5" />

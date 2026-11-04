@@ -110,14 +110,14 @@ export const FinancialView: React.FC<FinancialViewProps> = ({
             <h1 className="font-editorial text-xl sm:text-2xl font-semibold text-stone-900 dark:text-stone-100">
               Monthly Financial Performance — September 2026
             </h1>
-            <p className="text-xs text-stone-600 dark:text-stone-400 mt-1">
+            <p className="text-sm text-stone-600 dark:text-stone-400 mt-1">
               General Ledger trial balance reconciliation and management operating accounts.
             </p>
           </div>
 
           <div className="flex items-center gap-3 flex-wrap">
             {/* Compact Period Selector */}
-            <div className="inline-flex rounded-lg bg-stone-100 dark:bg-[#1f242c] p-0.5 text-xs font-medium border border-stone-200/70 dark:border-[#2b333d]">
+            <div className="inline-flex flex-wrap rounded-lg bg-stone-100 dark:bg-[#1f242c] p-0.5 text-sm font-medium border border-stone-200/70 dark:border-[#2b333d]">
               <button
                 type="button"
                 onClick={() => setPeriod('month')}
@@ -181,71 +181,71 @@ export const FinancialView: React.FC<FinancialViewProps> = ({
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-5">
           {/* Revenue */}
           <div className="p-3.5 rounded-xl bg-stone-50/80 dark:bg-[#1f242c] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Revenue</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Revenue</span>
             <div className="flex items-baseline gap-2 mt-1">
               <span className="font-editorial text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                 R4.28M
               </span>
-              <span className="text-xs font-mono-numbers font-semibold text-emerald-700 dark:text-emerald-400 flex items-center">
+              <span className="text-sm font-mono-numbers font-semibold text-emerald-700 dark:text-emerald-400 flex items-center">
                 +6.2%
               </span>
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">
               +R250k vs budget
             </span>
           </div>
 
           {/* Gross Profit */}
           <div className="p-3.5 rounded-xl bg-stone-50/80 dark:bg-[#1f242c] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Gross Profit</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Gross Profit</span>
             <div className="flex items-baseline gap-2 mt-1">
               <span className="font-editorial text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                 R2.94M
               </span>
-              <span className="text-xs font-mono-numbers font-semibold text-emerald-700 dark:text-emerald-400">
+              <span className="text-sm font-mono-numbers font-semibold text-emerald-700 dark:text-emerald-400">
                 +5.6%
               </span>
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">
               68.7% margin (vs 69.1% budget)
             </span>
           </div>
 
           {/* Operating Profit */}
           <div className="p-3.5 rounded-xl bg-stone-50/80 dark:bg-[#1f242c] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Operating Profit</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Operating Profit</span>
             <div className="flex items-baseline gap-2 mt-1">
               <span className="font-editorial text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                 R1.34M
               </span>
-              <span className="text-xs font-mono-numbers font-semibold text-rose-600 dark:text-rose-400">
+              <span className="text-sm font-mono-numbers font-semibold text-rose-600 dark:text-rose-400">
                 -2.6%
               </span>
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">
               vs budget target (R1.40M)
             </span>
           </div>
 
           {/* Cash */}
           <div className="p-3.5 rounded-xl bg-stone-50/80 dark:bg-[#1f242c] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Cash</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Cash</span>
             <div className="flex items-baseline gap-2 mt-1">
               <span className="font-editorial text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                 R1.85M
               </span>
-              <span className="text-xs font-mono-numbers font-semibold text-stone-700 dark:text-stone-300">
+              <span className="text-sm font-mono-numbers font-semibold text-stone-700 dark:text-stone-300">
                 42 Days
               </span>
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">
               -14.7% vs last month
             </span>
           </div>
         </div>
 
         {/* Concise Intelligence Finding */}
-        <div className="mt-4 p-3.5 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e] text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed flex items-start gap-2.5">
+        <div className="mt-4 p-3.5 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e] text-sm sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed flex items-start gap-2.5">
           <Info className="w-4 h-4 text-stone-500 dark:text-stone-400 shrink-0 mt-0.5" />
           <div>
             <strong className="font-semibold text-stone-900 dark:text-stone-100">
@@ -257,9 +257,9 @@ export const FinancialView: React.FC<FinancialViewProps> = ({
 
         {/* Familiar Management Statement Table */}
         <div className="overflow-x-auto mt-6">
-          <table className="w-full text-left text-xs border-collapse min-w-[620px]">
+          <table className="w-full text-left text-sm border-collapse min-w-[620px]">
             <thead>
-              <tr className="border-b border-stone-200 dark:border-[#2b333e] text-stone-600 dark:text-stone-400 font-semibold uppercase tracking-wider text-[11px]">
+              <tr className="border-b border-stone-200 dark:border-[#2b333e] text-stone-600 dark:text-stone-400 font-semibold uppercase tracking-wider text-sm">
                 <th className="py-2.5 px-3">Line Item</th>
                 <th className="py-2.5 px-3 text-right">Actual (September)</th>
                 <th className="py-2.5 px-3 text-right">Budget</th>
@@ -317,7 +317,7 @@ export const FinancialView: React.FC<FinancialViewProps> = ({
               })}
             </tbody>
           </table>
-          <div className="p-3 bg-stone-50/60 dark:bg-[#181c22] border-t border-stone-100 dark:border-[#222831] text-[11px] text-stone-500 dark:text-stone-400 flex items-center justify-between">
+          <div className="p-3 bg-stone-50/60 dark:bg-[#181c22] border-t border-stone-100 dark:border-[#222831] text-sm text-stone-500 dark:text-stone-400 flex flex-wrap gap-3 items-center justify-between">
             <span>
               All values verified against General Ledger trial balance.
             </span>
@@ -333,7 +333,7 @@ export const FinancialView: React.FC<FinancialViewProps> = ({
 
         {/* Largest Variances Section (3 to 5 material items) */}
         <div className="mt-8 pt-6 border-t border-stone-100 dark:border-[#262c34]">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-3">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-3">
             Largest Material Variances
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -344,11 +344,11 @@ export const FinancialView: React.FC<FinancialViewProps> = ({
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">
-                    <span className="font-semibold text-xs text-stone-900 dark:text-stone-100">
+                    <span className="font-semibold text-sm text-stone-900 dark:text-stone-100">
                       {v.item}
                     </span>
                     <span
-                      className={`text-xs font-mono-numbers font-bold shrink-0 ${
+                      className={`text-sm font-mono-numbers font-bold shrink-0 ${
                         v.type === 'favorable'
                           ? 'text-emerald-700 dark:text-emerald-400'
                           : 'text-rose-600 dark:text-rose-400'
@@ -357,11 +357,11 @@ export const FinancialView: React.FC<FinancialViewProps> = ({
                       {v.variance}
                     </span>
                   </div>
-                  <p className="text-[11px] text-stone-600 dark:text-stone-400 mt-1 leading-relaxed">
+                  <p className="text-sm text-stone-600 dark:text-stone-400 mt-1 leading-relaxed">
                     {v.reason}
                   </p>
                 </div>
-                <div className="flex items-center gap-3 text-[11px] font-mono-numbers text-stone-600 dark:text-stone-400 mt-2 pt-1.5 border-t border-stone-200/50 dark:border-[#29323d]">
+                <div className="flex items-center gap-3 text-sm font-mono-numbers text-stone-600 dark:text-stone-400 mt-2 pt-1.5 border-t border-stone-200/50 dark:border-[#29323d]">
                   <span>Actual: <strong className="text-stone-900 dark:text-stone-100">{v.actual}</strong></span>
                   <span>Budget: <strong className="text-stone-700 dark:text-stone-300">{v.budget}</strong></span>
                 </div>
@@ -374,12 +374,12 @@ export const FinancialView: React.FC<FinancialViewProps> = ({
         <div className="mt-8 pt-6 border-t border-stone-100 dark:border-[#262c34]">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400">
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400">
                 Revenue & Operating Profit Trend (12 Months)
               </h2>
-              <span className="text-xs text-stone-600 dark:text-stone-400">Amounts in Millions ZAR</span>
+              <span className="text-sm text-stone-600 dark:text-stone-400">Amounts in Millions ZAR</span>
             </div>
-            <div className="flex items-center gap-4 text-xs font-medium">
+            <div className="flex items-center gap-4 text-sm font-medium">
               <div className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded-xs bg-amber-400 dark:bg-amber-500" />
                 <span className="text-stone-600 dark:text-stone-300">Revenue</span>

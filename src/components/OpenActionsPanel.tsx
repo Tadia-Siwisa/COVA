@@ -58,11 +58,11 @@ export const OpenActionsPanel: React.FC<OpenActionsPanelProps> = ({
                 <h2 className="font-editorial text-xl font-semibold text-stone-900 dark:text-stone-100">
                   Open Actions
                 </h2>
-                <span className="text-[11px] font-mono-numbers px-2 py-0.5 rounded-full bg-stone-100 dark:bg-[#222831] text-stone-700 dark:text-stone-300 font-semibold">
+                <span className="text-sm font-mono-numbers px-2 py-0.5 rounded-full bg-stone-100 dark:bg-[#222831] text-stone-700 dark:text-stone-300 font-semibold">
                   {unresolvedActions.length} unresolved
                 </span>
               </div>
-              <p className="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+              <p className="text-sm text-stone-500 dark:text-stone-400 mt-0.5">
                 Key business matters affecting cash, contracts, and operations.
               </p>
             </div>
@@ -92,10 +92,10 @@ export const OpenActionsPanel: React.FC<OpenActionsPanelProps> = ({
                     </h3>
 
                     {/* Meta Row: Area, Due, Business Impact */}
-                    <div className="flex flex-wrap items-center gap-2 text-xs">
+                    <div className="flex flex-wrap items-center gap-2 text-sm">
                       {/* Business Area */}
                       <span
-                        className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${getAreaColor(
+                        className={`text-sm font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${getAreaColor(
                           action.area
                         )}`}
                       >
@@ -103,13 +103,13 @@ export const OpenActionsPanel: React.FC<OpenActionsPanelProps> = ({
                       </span>
 
                       {/* Due Date */}
-                      <span className="inline-flex items-center gap-1 text-[11px] text-stone-500 dark:text-stone-400 font-mono-numbers">
+                      <span className="inline-flex items-center gap-1 text-sm text-stone-500 dark:text-stone-400 font-mono-numbers">
                         <Clock className="w-3 h-3 text-stone-400" />
                         Due {action.due}
                       </span>
 
                       {/* Business Impact */}
-                      <span className="text-[11px] font-medium text-stone-700 dark:text-stone-300">
+                      <span className="text-sm font-medium text-stone-700 dark:text-stone-300">
                         · {action.businessImpact}
                       </span>
                     </div>
@@ -129,7 +129,7 @@ export const OpenActionsPanel: React.FC<OpenActionsPanelProps> = ({
 
             {unresolvedActions.length === 0 && (
               <div className="p-8 text-center text-stone-500 dark:text-stone-400">
-                <p className="text-xs">No pending high-priority actions.</p>
+                <p className="text-sm">No pending high-priority actions.</p>
               </div>
             )}
           </div>
@@ -137,21 +137,21 @@ export const OpenActionsPanel: React.FC<OpenActionsPanelProps> = ({
           {/* Resolved Actions (restrained, non-distracting) */}
           {completedActions.length > 0 && (
             <div className="mt-6 pt-4 border-t border-stone-100 dark:border-[#242a32]">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-500 block mb-2">
+              <span className="text-sm font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-400 block mb-2">
                 Resolved ({completedActions.length})
               </span>
               <div className="space-y-2">
                 {completedActions.map((action) => (
                   <div
                     key={action.id}
-                    className="p-2.5 rounded-lg bg-stone-50/40 dark:bg-[#131619] border border-stone-200/50 dark:border-[#20252b] flex items-center justify-between opacity-60 text-xs"
+                    className="p-2.5 rounded-lg bg-stone-50/40 dark:bg-[#131619] border border-stone-200/50 dark:border-[#20252b] flex items-center justify-between opacity-60 text-sm"
                   >
                     <div className="line-through text-stone-500 dark:text-stone-400 truncate">
                       {action.title}
                     </div>
                     <button
                       onClick={() => onToggleComplete(action.id)}
-                      className="text-[10px] text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 underline shrink-0 cursor-pointer ml-2"
+                      className="text-sm text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 underline shrink-0 cursor-pointer ml-2"
                     >
                       Undo
                     </button>
@@ -163,7 +163,7 @@ export const OpenActionsPanel: React.FC<OpenActionsPanelProps> = ({
         </div>
 
         {/* Footer info */}
-        <div className="pt-4 border-t border-stone-100 dark:border-[#242a32] text-[11px] text-stone-400 dark:text-stone-500 flex items-center justify-between">
+        <div className="pt-4 border-t border-stone-100 dark:border-[#242a32] text-sm text-stone-400 dark:text-stone-400 flex items-center justify-between">
           <span>Updates automatically as ledger milestones are achieved</span>
         </div>
       </div>

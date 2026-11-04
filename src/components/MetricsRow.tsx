@@ -50,17 +50,17 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
   return (
     <section id="key-financial-metrics-section" className="my-5">
       <div className="flex items-center justify-between mb-2.5 px-0.5">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
           Key Financial Metrics
         </h2>
         {hasUploadedFiles && (
-          <span className="text-[11px] text-stone-400 dark:text-stone-500">
-            Click Source on any metric to trace provenance
+          <span className="text-sm text-stone-400 dark:text-stone-400">
+            
           </span>
         )}
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-1 min-[380px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {!hasUploadedFiles
           ? defaultLabels.map((item) => (
               <div
@@ -69,7 +69,7 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                 className="text-left p-4 sm:p-5 rounded-xl border border-dashed border-stone-300 dark:border-[#2b333e] bg-stone-50/50 dark:bg-[#14171a] flex flex-col justify-between hover:border-stone-400 dark:hover:border-stone-500 hover:bg-stone-50 dark:hover:bg-[#181d24] transition-all cursor-pointer group"
               >
                 <div>
-                  <span className="text-xs font-semibold tracking-tight uppercase text-stone-400 dark:text-stone-500 block mb-2">
+                  <span className="text-sm font-semibold tracking-tight uppercase text-stone-400 dark:text-stone-400 block mb-2">
                     {item.label}
                   </span>
                   <div className="font-editorial text-xl sm:text-2xl font-semibold text-stone-400 dark:text-stone-600 my-1">
@@ -77,8 +77,8 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-stone-200/60 dark:border-[#22272e] flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 group-hover:text-blue-700 dark:group-hover:text-blue-400">
-                  <span className="text-[11px]">Upload files to build this view</span>
+                <div className="mt-4 pt-3 border-t border-stone-200/60 dark:border-[#22272e] flex items-center justify-between text-sm text-stone-500 dark:text-stone-400 group-hover:text-blue-700 dark:group-hover:text-blue-400">
+                  <span className="text-sm">Upload files to build this view</span>
                   <UploadCloud className="w-3.5 h-3.5 shrink-0 opacity-70 group-hover:opacity-100" />
                 </div>
               </div>
@@ -93,6 +93,7 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                   key={metric.id}
                   id={`metric-card-${metric.id}`}
                   onClick={() => onSelectMetric(metric)}
+
                   className={`text-left p-4 sm:p-5 rounded-xl border transition-all cursor-pointer relative group flex flex-col justify-between ${
                     isSelected
                       ? 'bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 border-stone-900 dark:border-white shadow-xs ring-1 ring-stone-900/10'
@@ -101,9 +102,9 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                 >
                   <div>
                     {/* Metric Label & Subtle Source Action */}
-                    <div className="flex items-center justify-between gap-1 mb-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                       <span
-                        className={`text-xs font-semibold tracking-tight uppercase truncate ${
+                        className={`text-sm font-semibold tracking-tight ${
                           isSelected
                             ? 'text-stone-300 dark:text-stone-700'
                             : 'text-stone-500 dark:text-stone-400'
@@ -117,7 +118,7 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                         type="button"
                         id={`source-btn-${metric.id}`}
                         onClick={(e) => handleSourceClick(metric.id, e)}
-                        className={`inline-flex items-center gap-1 text-[10px] font-mono font-medium px-1.5 py-0.5 rounded transition cursor-pointer ${
+                        className={`inline-flex items-center gap-1 text-sm font-mono font-medium px-1.5 py-0.5 rounded transition cursor-pointer ${
                           isSelected
                             ? 'text-stone-200 bg-stone-800 hover:bg-stone-700 dark:text-stone-800 dark:bg-stone-200 dark:hover:bg-stone-300'
                             : 'text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-[#20262f] hover:bg-stone-200 dark:hover:bg-[#2a3340] border border-stone-200/70 dark:border-[#2c3542]'
@@ -130,9 +131,9 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                     </div>
 
                     {/* Primary Figure */}
-                    <div className="font-editorial text-2xl sm:text-3xl font-semibold tracking-tight my-1 leading-none text-stone-900 dark:text-stone-100 font-mono-numbers">
+                    <button type="button" onClick={(e) => { e.stopPropagation(); onSelectMetric(metric); }} aria-label={`${metric.label}: ${metric.value}. View details`} className="font-editorial text-3xl font-semibold tracking-tight my-1 leading-none text-stone-900 dark:text-stone-100 font-mono-numbers text-left cursor-pointer">
                       {metric.value}
-                    </div>
+                    </button>
                   </div>
 
                   {/* Percentage Change & Comparison */}
@@ -146,7 +147,7 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                     <div className="flex items-center gap-2 flex-wrap">
                       {isPositive && (
                         <span
-                          className={`inline-flex items-center text-xs sm:text-[13px] font-mono-numbers font-bold px-2 py-0.5 rounded-md ${
+                          className={`inline-flex items-center text-sm sm:text-sm font-mono-numbers font-bold px-2 py-0.5 rounded-md ${
                             isSelected
                               ? 'bg-emerald-900/40 text-emerald-300 dark:bg-emerald-100 dark:text-emerald-800'
                               : 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
@@ -158,7 +159,7 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                       )}
                       {isNegative && (
                         <span
-                          className={`inline-flex items-center text-xs sm:text-[13px] font-mono-numbers font-bold px-2 py-0.5 rounded-md ${
+                          className={`inline-flex items-center text-sm sm:text-sm font-mono-numbers font-bold px-2 py-0.5 rounded-md ${
                             isSelected
                               ? 'bg-rose-900/40 text-rose-300 dark:bg-rose-100 dark:text-rose-800'
                               : 'bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/20'
@@ -170,7 +171,7 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                       )}
                       {!isPositive && !isNegative && (
                         <span
-                          className={`inline-flex items-center text-xs sm:text-[13px] font-mono-numbers font-bold px-2 py-0.5 rounded-md ${
+                          className={`inline-flex items-center text-sm sm:text-sm font-mono-numbers font-bold px-2 py-0.5 rounded-md ${
                             isSelected
                               ? 'bg-blue-900/40 text-blue-200 dark:bg-blue-100 dark:text-blue-900'
                               : 'bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300 border border-stone-200 dark:border-stone-700'
@@ -182,7 +183,7 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                       )}
 
                       <span
-                        className={`text-xs ${
+                        className={`text-sm ${
                           isSelected
                             ? 'text-stone-300 dark:text-stone-600'
                             : 'text-stone-500 dark:text-stone-400'
@@ -196,7 +197,7 @@ export const MetricsRow: React.FC<MetricsRowProps> = ({
                       className={`w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 shrink-0 ${
                         isSelected
                           ? 'text-stone-400 dark:text-stone-600'
-                          : 'text-stone-400 dark:text-stone-500 group-hover:text-stone-700 dark:group-hover:text-stone-300'
+                          : 'text-stone-400 dark:text-stone-400 group-hover:text-stone-700 dark:group-hover:text-stone-300'
                       }`}
                     />
                   </div>

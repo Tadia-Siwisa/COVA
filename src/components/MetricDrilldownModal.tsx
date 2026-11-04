@@ -71,7 +71,7 @@ export const MetricDrilldownModal: React.FC<MetricDrilldownModalProps> = ({
 
         {/* Title */}
         <div className="mb-4">
-          <span className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 block mb-1">
+          <span className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 block mb-1">
             Metric Breakdown
           </span>
           <h2 className="font-editorial text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900 dark:text-stone-100">
@@ -87,25 +87,25 @@ export const MetricDrilldownModal: React.FC<MetricDrilldownModalProps> = ({
 
           <div className="flex items-center gap-1.5">
             {isPositive && (
-              <span className="inline-flex items-center text-xs sm:text-[13px] font-mono-numbers font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
+              <span className="inline-flex items-center text-sm sm:text-sm font-mono-numbers font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
                 <ArrowUpRight className="w-3.5 h-3.5 mr-0.5" />
                 {metric.change}
               </span>
             )}
             {isNegative && (
-              <span className="inline-flex items-center text-xs sm:text-[13px] font-mono-numbers font-bold text-rose-700 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-md border border-rose-500/20">
+              <span className="inline-flex items-center text-sm sm:text-sm font-mono-numbers font-bold text-rose-700 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-md border border-rose-500/20">
                 <ArrowDownRight className="w-3.5 h-3.5 mr-0.5" />
                 {metric.change}
               </span>
             )}
             {!isPositive && !isNegative && (
-              <span className="inline-flex items-center text-xs sm:text-[13px] font-mono-numbers font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-[#20262f] px-2 py-0.5 rounded-md">
+              <span className="inline-flex items-center text-sm sm:text-sm font-mono-numbers font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-[#20262f] px-2 py-0.5 rounded-md">
                 <Minus className="w-3.5 h-3.5 mr-0.5" />
                 {metric.change}
               </span>
             )}
 
-            <span className="text-xs text-stone-500 dark:text-stone-400">
+            <span className="text-sm text-stone-500 dark:text-stone-400">
               {metric.secondaryContext}
             </span>
           </div>
@@ -113,13 +113,13 @@ export const MetricDrilldownModal: React.FC<MetricDrilldownModalProps> = ({
 
         {/* Key Breakdown Table */}
         <div className="mb-5">
-          <div className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">
+          <div className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">
             Key Breakdown
           </div>
 
-          <div className="border border-stone-200/80 dark:border-[#262c34] rounded-xl overflow-hidden divide-y divide-stone-100 dark:divide-[#242a32] text-xs">
+          <div className="border border-stone-200/80 dark:border-[#262c34] rounded-xl overflow-hidden divide-y divide-stone-100 dark:divide-[#242a32] text-sm">
             {/* Table Header */}
-            <div className="grid grid-cols-12 px-3 py-2 bg-stone-50 dark:bg-[#15191d] font-semibold text-stone-500 dark:text-stone-400 text-[11px] uppercase tracking-wider">
+            <div className="grid grid-cols-12 px-3 py-2 bg-stone-50 dark:bg-[#15191d] font-semibold text-stone-500 dark:text-stone-400 text-sm uppercase tracking-wider">
               <span className="col-span-6">{cols.col1}</span>
               <span className="col-span-3 text-right">{cols.col2}</span>
               <span className="col-span-3 text-right">{cols.col3}</span>
@@ -147,10 +147,10 @@ export const MetricDrilldownModal: React.FC<MetricDrilldownModalProps> = ({
 
         {/* One concise takeaway: What changed */}
         <div className="mb-6 p-3.5 rounded-xl bg-stone-50/80 dark:bg-[#15191d] border border-stone-200/70 dark:border-[#262c34]">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 block mb-1">
+          <span className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 block mb-1">
             What Changed
           </span>
-          <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+          <p className="text-sm sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
             {getTakeaway()}
           </p>
         </div>
@@ -163,7 +163,7 @@ export const MetricDrilldownModal: React.FC<MetricDrilldownModalProps> = ({
               onClose();
               onDiscussMetric(metric);
             }}
-            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold text-xs sm:text-sm hover:bg-stone-800 dark:hover:bg-white shadow-xs transition cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-semibold text-sm sm:text-sm hover:bg-stone-800 dark:hover:bg-white shadow-xs transition cursor-pointer"
           >
             <span>Discuss this metric</span>
             <ArrowRight className="w-4 h-4" />

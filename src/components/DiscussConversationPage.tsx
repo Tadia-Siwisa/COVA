@@ -248,14 +248,14 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
 
   return (
     <div className="flex flex-col h-[calc(100vh-8.5rem)] min-h-[520px] max-w-3xl mx-auto w-full">
-      <p className="text-xs text-stone-500 px-4 py-2">Demo conversation: scripted examples based on fictional Nala Energy data. No live AI model; examples do not reflect edits to the dashboard.</p>
+      <p className="text-sm text-stone-500 px-4 py-2">Demo conversation: scripted examples based on fictional Nala Energy data. No live AI model; examples do not reflect edits to the dashboard.</p>
       {/* Top Header: Visually quiet navigation and context indicator */}
       <div className="flex items-center justify-between py-2.5 px-4 border-b border-stone-200/80 dark:border-[#22272e] bg-white/70 dark:bg-[#14171b]/70 backdrop-blur-md rounded-t-xl gap-2">
         <div className="flex items-center gap-2.5 min-w-0">
           <button
             id="back-to-perspective-btn"
             onClick={onBack}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white hover:bg-stone-100 dark:hover:bg-[#1f242b] transition cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white hover:bg-stone-100 dark:hover:bg-[#1f242b] transition cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back</span>
@@ -263,7 +263,7 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
 
           {/* Small context indicator if opened from a metric or attention item */}
           {contextLabel && (
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs bg-stone-100 dark:bg-[#1c2127] text-stone-700 dark:text-stone-300 border border-stone-200/70 dark:border-[#28303a] truncate max-w-[280px] sm:max-w-md">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-sm bg-stone-100 dark:bg-[#1c2127] text-stone-700 dark:text-stone-300 border border-stone-200/70 dark:border-[#28303a] truncate max-w-[280px] sm:max-w-md">
               <span className="truncate font-medium">{contextLabel}</span>
               <button
                 onClick={handleClearContext}
@@ -300,7 +300,7 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
             <h3 className="text-sm font-semibold text-stone-800 dark:text-stone-200 mb-1">
               Cova Intelligence
             </h3>
-            <p className="text-xs text-stone-600 dark:text-stone-400 max-w-sm">
+            <p className="text-sm text-stone-600 dark:text-stone-400 max-w-sm">
               {contextLabel
                 ? `Ask about ${contextLabel}, its underlying drivers, or business impact.`
                 : 'Ask about your business performance, cash runway, customer margins, or scenario trade-offs.'}
@@ -334,13 +334,13 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
 
               {/* Expandable Sources Control for Assistant Answers (Prompt Section 8) */}
               {msg.sender === 'assistant' && msg.sources && msg.sources.length > 0 && (
-                <div className="mt-3 pt-2.5 border-t border-stone-100 dark:border-[#242b34] text-xs">
+                <div className="mt-3 pt-2.5 border-t border-stone-100 dark:border-[#242b34] text-sm">
                   <button
                     type="button"
                     onClick={() =>
                       setExpandedSourceMsgId(expandedSourceMsgId === msg.id ? null : msg.id)
                     }
-                    className="inline-flex items-center gap-1.5 text-[11px] font-mono font-medium text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-sm font-mono font-medium text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition cursor-pointer"
                   >
                     <FileSpreadsheet className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
                     <span>Sources ({msg.sources.length})</span>
@@ -362,14 +362,14 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
                             <div className="min-w-0">
                               <div className="flex items-center gap-1.5">
                                 <FileSpreadsheet className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                                <span className="font-mono text-xs font-semibold text-stone-800 dark:text-stone-200 truncate">
+                                <span className="font-mono text-sm font-semibold text-stone-800 dark:text-stone-200 truncate">
                                   {src.filename}
                                 </span>
-                                <span className="text-[10px] text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-1 rounded">
+                                <span className="text-sm text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-1 rounded">
                                   {src.freshness.split('·')[0].trim()}
                                 </span>
                               </div>
-                              <span className="text-[10px] text-stone-500 dark:text-stone-400 block truncate">
+                              <span className="text-sm text-stone-500 dark:text-stone-400 block truncate">
                                 Feeds: {src.areas}
                               </span>
                             </div>
@@ -378,7 +378,7 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
                               <button
                                 type="button"
                                 onClick={() => onOpenSpreadsheet(src.sheetId)}
-                                className="inline-flex items-center gap-1 text-[11px] font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-400 shrink-0 cursor-pointer self-end sm:self-auto"
+                                className="inline-flex items-center gap-1 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-400 shrink-0 cursor-pointer self-end sm:self-auto"
                               >
                                 <span>Inspect sheet</span>
                                 <ExternalLink className="w-2.5 h-2.5" />
@@ -391,13 +391,13 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
                       {/* Clearly Separated Assumptions & Estimates */}
                       {msg.assumptions && msg.assumptions.length > 0 && (
                         <div className="pt-2 border-t border-stone-200/60 dark:border-[#222831] space-y-1">
-                          <span className="text-[10px] font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-500 block">
+                          <span className="text-sm font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-400 block">
                             Assumptions & Estimates:
                           </span>
                           {msg.assumptions.map((asm, aIdx) => (
                             <p
                               key={aIdx}
-                              className="text-[11px] text-stone-600 dark:text-stone-400 italic leading-snug"
+                              className="text-sm text-stone-600 dark:text-stone-400 italic leading-snug"
                             >
                               {asm}
                             </p>
@@ -414,13 +414,13 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
 
         {/* Simplified Loading State */}
         {isThinking && (
-          <div className="flex gap-3 items-center text-xs text-stone-500 dark:text-stone-400">
+          <div className="flex gap-3 items-center text-sm text-stone-500 dark:text-stone-400">
             <div className="w-6 h-6 rounded-md bg-[#0c1e38] dark:bg-[#132746] text-blue-300 dark:text-blue-200 flex items-center justify-center shrink-0 border border-blue-900/30">
               <MessageSquare className="w-3 h-3" />
             </div>
             <div className="px-3.5 py-2.5 bg-white dark:bg-[#181c22] rounded-xl border border-stone-200/80 dark:border-[#262c35] flex items-center gap-2 shadow-2xs">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse" />
-              <span className="text-xs font-medium text-stone-600 dark:text-stone-300">
+              <span className="text-sm font-medium text-stone-600 dark:text-stone-300">
                 {thinkingLabel}
               </span>
             </div>
@@ -445,7 +445,7 @@ export const DiscussConversationPage: React.FC<DiscussConversationPageProps> = (
             value={inputQuery}
             onChange={(e) => setInputQuery(e.target.value)}
             placeholder="Ask about your business..."
-            className="flex-1 bg-stone-50 dark:bg-[#101316] text-stone-900 dark:text-stone-100 placeholder-stone-400 px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#262d36] focus:outline-none focus:border-stone-400 dark:focus:border-stone-500 text-xs sm:text-sm transition"
+            className="flex-1 bg-stone-50 dark:bg-[#101316] text-stone-900 dark:text-stone-100 placeholder-stone-400 px-4 py-2.5 rounded-xl border border-stone-200 dark:border-[#262d36] focus:outline-none focus:border-stone-400 dark:focus:border-stone-500 text-sm sm:text-sm transition"
           />
 
           <button

@@ -56,7 +56,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
             <h1 className="font-editorial text-xl sm:text-2xl font-semibold text-stone-900 dark:text-stone-100">
               Customer Performance
             </h1>
-            <p className="text-xs text-stone-600 dark:text-stone-400 mt-1">
+            <p className="text-sm text-stone-600 dark:text-stone-400 mt-1">
               Active commercial off-takers, revenue billing, contract terms, and margin health.
             </p>
           </div>
@@ -73,7 +73,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
         </div>
 
         {/* Concise Intelligence Finding (No auto-recommended solutions) */}
-        <div className="my-4 p-3.5 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e] text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed flex items-start gap-2.5">
+        <div className="my-4 p-3.5 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e] text-sm sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed flex items-start gap-2.5">
           <Info className="w-4 h-4 text-stone-500 dark:text-stone-400 shrink-0 mt-0.5" />
           <div>
             <strong className="font-semibold text-stone-900 dark:text-stone-100">
@@ -85,9 +85,9 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
 
         {/* Customer Accounts Table */}
         <div className="overflow-x-auto mt-4">
-          <table className="w-full text-left text-xs border-collapse min-w-[640px]">
+          <table className="w-full text-left text-sm border-collapse min-w-[640px]">
             <thead>
-              <tr className="border-b border-stone-200 dark:border-[#2b333e] text-stone-600 dark:text-stone-400 font-semibold uppercase tracking-wider text-[11px]">
+              <tr className="border-b border-stone-200 dark:border-[#2b333e] text-stone-600 dark:text-stone-400 font-semibold uppercase tracking-wider text-sm">
                 <th className="py-2.5 px-3">Customer</th>
                 <th className="py-2.5 px-3">Contract</th>
                 <th className="py-2.5 px-3 text-right">Revenue</th>
@@ -112,14 +112,14 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                       <div className="font-semibold text-stone-900 dark:text-stone-100">
                         {cust.name}
                       </div>
-                      <div className="text-[11px] text-stone-600 dark:text-stone-400">
+                      <div className="text-sm text-stone-600 dark:text-stone-400">
                         {cust.industry}
                       </div>
                     </td>
 
                     {/* Contract */}
                     <td className="py-3 px-3 font-sans">
-                      <span className="px-2 py-0.5 rounded bg-stone-100 dark:bg-[#1f252d] text-stone-700 dark:text-stone-300 border border-stone-200/60 dark:border-[#2b333e] text-[11px]">
+                      <span className="px-2 py-0.5 rounded bg-stone-100 dark:bg-[#1f252d] text-stone-700 dark:text-stone-300 border border-stone-200/60 dark:border-[#2b333e] text-sm">
                         {cust.contractModel}
                       </span>
                     </td>
@@ -180,13 +180,13 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
             {/* Modal Header */}
             <div className="flex items-start justify-between pb-4 border-b border-stone-100 dark:border-[#262c34]">
               <div>
-                <span className="text-xs uppercase font-semibold text-stone-500 dark:text-stone-400 tracking-wider">
+                <span className="text-sm uppercase font-semibold text-stone-500 dark:text-stone-400 tracking-wider">
                   Customer Account Details
                 </span>
                 <h2 className="font-editorial text-xl font-bold text-stone-900 dark:text-stone-100 mt-0.5">
                   {selectedCustomer.name}
                 </h2>
-                <span className="text-xs text-stone-500 dark:text-stone-400">
+                <span className="text-sm text-stone-500 dark:text-stone-400">
                   {selectedCustomer.industry} · {selectedCustomer.location}
                 </span>
               </div>
@@ -200,16 +200,16 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
             </div>
 
             {/* Modal Body: Metrics Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-5 text-xs">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-5 text-sm">
               <div className="p-3 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-                <span className="text-stone-500 dark:text-stone-400 block text-[11px]">Monthly Revenue</span>
+                <span className="text-stone-500 dark:text-stone-400 block text-sm">Monthly Revenue</span>
                 <span className="font-mono-numbers font-bold text-stone-900 dark:text-stone-100 text-sm">
                   {selectedCustomer.monthlyBilledZAR}
                 </span>
               </div>
 
               <div className="p-3 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-                <span className="text-stone-500 dark:text-stone-400 block text-[11px]">Gross Margin</span>
+                <span className="text-stone-500 dark:text-stone-400 block text-sm">Gross Margin</span>
                 <span
                   className={`font-mono-numbers font-bold text-sm ${
                     selectedCustomer.marginHealth === 'critical'
@@ -222,36 +222,36 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
               </div>
 
               <div className="p-3 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-                <span className="text-stone-500 dark:text-stone-400 block text-[11px]">Payment History</span>
+                <span className="text-stone-500 dark:text-stone-400 block text-sm">Payment History</span>
                 <span className="font-mono-numbers font-semibold text-stone-900 dark:text-stone-100 text-sm">
                   {selectedCustomer.debtorDays} Debtor Days
                 </span>
               </div>
 
               <div className="p-3 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-                <span className="text-stone-500 dark:text-stone-400 block text-[11px]">Contract Model</span>
+                <span className="text-stone-500 dark:text-stone-400 block text-sm">Contract Model</span>
                 <span className="font-medium text-stone-900 dark:text-stone-100 text-sm">
                   {selectedCustomer.contractModel}
                 </span>
               </div>
 
               <div className="p-3 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-                <span className="text-stone-500 dark:text-stone-400 block text-[11px]">System Capacity</span>
-                <span className="font-medium text-stone-900 dark:text-stone-100 text-xs">
+                <span className="text-stone-500 dark:text-stone-400 block text-sm">System Capacity</span>
+                <span className="font-medium text-stone-900 dark:text-stone-100 text-sm">
                   {selectedCustomer.systemCapacity}
                 </span>
               </div>
 
               <div className="p-3 rounded-lg bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-                <span className="text-stone-500 dark:text-stone-400 block text-[11px]">Energy Exposure</span>
-                <span className="font-medium text-stone-900 dark:text-stone-100 text-xs">
+                <span className="text-stone-500 dark:text-stone-400 block text-sm">Energy Exposure</span>
+                <span className="font-medium text-stone-900 dark:text-stone-100 text-sm">
                   {100 - selectedCustomer.eskomOffsetPct}% Grid Exposed
                 </span>
               </div>
             </div>
 
             {/* Relevant Issues & Operational Notes */}
-            <div className="p-3.5 rounded-xl bg-stone-50/90 dark:bg-[#1f252d] border border-stone-200/80 dark:border-[#2b333e] text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed mb-5">
+            <div className="p-3.5 rounded-xl bg-stone-50/90 dark:bg-[#1f252d] border border-stone-200/80 dark:border-[#2b333e] text-sm sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed mb-5">
               <strong className="font-semibold text-stone-900 dark:text-stone-100 block mb-1">
                 Account Issues & Operating Notes:
               </strong>
@@ -266,7 +266,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                   setSelectedCustomer(null);
                   onOpenSource();
                 }}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white bg-stone-100 dark:bg-[#202730] border border-stone-200/80 dark:border-[#2b333d] transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white bg-stone-100 dark:bg-[#202730] border border-stone-200/80 dark:border-[#2b333d] transition cursor-pointer"
               >
                 <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Source Documents</span>
@@ -279,7 +279,7 @@ export const CustomersView: React.FC<CustomersViewProps> = ({
                   setSelectedCustomer(null);
                   onOpenIntelligence(`Customers — ${custName}`);
                 }}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-white bg-blue-900 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 transition cursor-pointer shadow-xs"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm font-semibold text-white bg-blue-900 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 transition cursor-pointer shadow-xs"
               >
                 <MessageSquare className="w-3.5 h-3.5 fill-white" />
                 <span>Discuss {selectedCustomer.name} in Cova</span>

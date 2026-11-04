@@ -32,3 +32,43 @@
   font-feature-settings: "tnum" 1;
 }
 
+
+/* Readable defaults while retaining the original dashboard structure. */
+@layer base {
+  html { color-scheme: light; }
+  html.dark { color-scheme: dark; }
+  body { font-size: 16px; line-height: 1.5; }
+  button, input, select, textarea { font: inherit; }
+  button, [role="button"], summary { touch-action: manipulation; }
+  button:focus-visible, [role="button"]:focus-visible, summary:focus-visible,
+  a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #60a5fa; outline-offset: 3px;
+  }
+  table { font-variant-numeric: tabular-nums; }
+  th { white-space: nowrap; }
+  td, th { line-height: 1.5; }
+}
+/* Scoped surface and interaction rules intentionally override utilities. */
+
+  #key-financial-metrics-section [id^="metric-card-"] { border-top: 3px solid #64748b; }
+  #key-financial-metrics-section #metric-card-revenue { border-top-color: #34d399; }
+  #key-financial-metrics-section #metric-card-margin { border-top-color: #60a5fa; }
+  #key-financial-metrics-section #metric-card-cash { border-top-color: #fbbf24; }
+  #key-financial-metrics-section #metric-card-debt { border-top-color: #c4b5fd; }
+  .dark #key-financial-metrics-section [id^="metric-card-"] { background: #1b222a; }
+  main section { scroll-margin-top: 10rem; }
+  header button { min-height: 44px; }
+  [id^="source-btn-"] { min-height: 36px; }
+@media (max-width: 639px) {
+  main { padding-inline: 16px; }
+  header > div > div:first-child { align-items: flex-start; }
+  header > div > div:first-child > div:last-child { flex-wrap: nowrap; }
+  #data-sources-btn, #upload-files-btn, #open-actions-btn { width: 40px; min-height: 44px; padding: 10px; justify-content: center; }
+  #data-sources-btn > span, #upload-files-btn > span, #open-actions-btn > span { display: none; }
+  header nav { padding-bottom: 4px; }
+  table { min-width: 640px; }
+  #key-financial-metrics-section [id^="metric-card-"] { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

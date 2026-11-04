@@ -41,28 +41,28 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
     switch (status) {
       case 'Current':
         return (
-          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
             <CheckCircle2 className="w-3 h-3" />
             Current
           </span>
         );
       case 'Update Soon':
         return (
-          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-700 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md border border-amber-500/20">
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-amber-700 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md border border-amber-500/20">
             <Clock className="w-3 h-3" />
             Update Soon
           </span>
         );
       case 'Out of Date':
         return (
-          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-rose-700 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-md border border-rose-500/20">
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-rose-700 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-md border border-rose-500/20">
             <AlertTriangle className="w-3 h-3" />
             Out of Date
           </span>
         );
       case 'Missing':
         return (
-          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-stone-500 dark:text-stone-400 bg-stone-200/60 dark:bg-[#252b33] px-2 py-0.5 rounded-md">
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-stone-500 dark:text-stone-400 bg-stone-200/60 dark:bg-[#252b33] px-2 py-0.5 rounded-md">
             <HelpCircle className="w-3 h-3" />
             Missing
           </span>
@@ -106,7 +106,7 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
               Uploaded Data Sources
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-stone-500 dark:text-stone-400">
+          <p className="text-sm sm:text-sm text-stone-500 dark:text-stone-400">
             Visible and traceable files feeding the Cova operational & financial engine.
           </p>
         </div>
@@ -120,7 +120,7 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
             <h3 className="text-sm font-semibold text-stone-800 dark:text-stone-200 mb-1">
               No files uploaded yet
             </h3>
-            <p className="text-xs text-stone-500 dark:text-stone-400 max-w-sm mb-4">
+            <p className="text-sm text-stone-500 dark:text-stone-400 max-w-sm mb-4">
               The system currently has no ingested business files. Upload company records to calculate revenue, profit, cash, and energy telemetry.
             </p>
             <button
@@ -128,7 +128,7 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
                 onClose();
                 onOpenUpload();
               }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 text-xs font-semibold hover:bg-stone-800 dark:hover:bg-white transition cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 text-sm font-semibold hover:bg-stone-800 dark:hover:bg-white transition cursor-pointer"
             >
               <UploadCloud className="w-4 h-4" />
               <span>Upload Business Files</span>
@@ -140,9 +140,9 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
               const files = dataSources.filter((f) => f.category === cat);
               return (
                 <div key={cat} className="space-y-2.5">
-                  <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 px-1">
+                  <div className="flex items-center justify-between text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 px-1">
                     <span>{cat} Records</span>
-                    <span className="text-[11px] font-normal lowercase">
+                    <span className="text-sm font-normal lowercase">
                       {files.filter((f) => f.status === 'Current').length} / {files.length} current
                     </span>
                   </div>
@@ -156,17 +156,17 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
                         <div className="space-y-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
                             <FileSpreadsheet className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                            <span className="text-xs font-mono font-semibold text-stone-900 dark:text-stone-100">
+                            <span className="text-sm font-mono font-semibold text-stone-900 dark:text-stone-100">
                               {file.name}
                             </span>
                             {getFreshnessBadge(file.status)}
                           </div>
 
-                          <p className="text-xs text-stone-500 dark:text-stone-400 line-clamp-1">
+                          <p className="text-sm text-stone-500 dark:text-stone-400 line-clamp-1">
                             {file.description}
                           </p>
 
-                          <div className="flex flex-wrap items-center gap-2 text-[11px] text-stone-400 dark:text-stone-500 pt-0.5">
+                          <div className="flex flex-wrap items-center gap-2 text-sm text-stone-400 dark:text-stone-400 pt-0.5">
                             <span>Last updated: {file.lastUpdated}</span>
                             <span>·</span>
                             <span>Feeds: {file.feedsAreas.join(', ')}</span>
@@ -180,7 +180,7 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
                                 onClose();
                                 onOpenUpload();
                               }}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-amber-800 dark:text-amber-300 bg-amber-500/15 border border-amber-500/30 hover:bg-amber-500/25 transition cursor-pointer"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-amber-800 dark:text-amber-300 bg-amber-500/15 border border-amber-500/30 hover:bg-amber-500/25 transition cursor-pointer"
                             >
                               <UploadCloud className="w-3.5 h-3.5" />
                               <span>Upload file</span>
@@ -191,7 +191,7 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
                                 onClose();
                                 onOpenSpreadsheet(getSheetIdFromFilename(file.name));
                               }}
-                              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium text-stone-700 dark:text-stone-200 bg-white dark:bg-[#1c222a] border border-stone-200 dark:border-[#2c3542] hover:bg-stone-100 dark:hover:bg-[#252c36] transition cursor-pointer"
+                              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-stone-700 dark:text-stone-200 bg-white dark:bg-[#1c222a] border border-stone-200 dark:border-[#2c3542] hover:bg-stone-100 dark:hover:bg-[#252c36] transition cursor-pointer"
                             >
                               <span>Inspect</span>
                               <ExternalLink className="w-3 h-3 text-stone-400" />
@@ -209,7 +209,7 @@ export const DataSourcesPanel: React.FC<DataSourcesPanelProps> = ({
 
         {/* Footer info & Upload button */}
         {hasUploadedFiles && (
-          <div className="pt-4 mt-4 border-t border-stone-100 dark:border-[#22272e] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500 dark:text-stone-400">
+          <div className="pt-4 mt-4 border-t border-stone-100 dark:border-[#22272e] flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-stone-500 dark:text-stone-400">
             <span>Simple by default. Verifiable on demand.</span>
             <button
               onClick={() => {

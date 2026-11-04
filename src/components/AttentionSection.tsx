@@ -1,6 +1,6 @@
 import React from 'react';
 import { AttentionFinding } from '../types';
-import { ArrowRight, UploadCloud, AlertCircle } from 'lucide-react';
+import { ArrowRight, UploadCloud } from 'lucide-react';
 
 interface AttentionSectionProps {
   findings: AttentionFinding[];
@@ -9,103 +9,48 @@ interface AttentionSectionProps {
   onOpenUpload?: () => void;
 }
 
-export const AttentionSection: React.FC<AttentionSectionProps> = ({
-  findings,
-  hasUploadedFiles,
-  onInvestigate,
-  onOpenUpload,
-}) => {
-  if (!hasUploadedFiles) {
-    return (
-      <section id="what-needs-attention-section" className="my-5">
-        <div className="flex items-center justify-between mb-2.5 px-0.5">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
-            What Needs Your Attention
-          </h2>
-        </div>
-
-        <div
-          onClick={onOpenUpload}
-          className="p-5 rounded-xl border border-dashed border-stone-300 dark:border-[#2b333e] bg-stone-50/50 dark:bg-[#14171a] flex items-center justify-between gap-3 text-stone-500 dark:text-stone-400 hover:border-stone-400 dark:hover:border-stone-500 hover:bg-stone-50 transition cursor-pointer group"
-        >
-          <div className="flex items-center gap-3">
-            <span className="text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-md text-stone-500 dark:text-stone-400 bg-stone-200/60 dark:bg-[#20262f]">
-              Pending
-            </span>
-            <span className="text-xs sm:text-sm font-medium text-stone-600 dark:text-stone-400">
-              No data yet — Upload operational and financial files to surface prioritized attention items.
-            </span>
-          </div>
-
-          <div className="flex items-center gap-1 text-xs font-medium text-amber-700 dark:text-amber-400 opacity-80 group-hover:opacity-100">
-            <span>Upload files</span>
-            <UploadCloud className="w-3.5 h-3.5" />
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  const alerts = [
-    {
-      area: 'Cash & Debt',
-      areaColor: 'text-amber-800 dark:text-amber-300 bg-amber-500/10 border-amber-500/20',
-      headline: 'R1.15M working capital tied up pending sign-off',
-      finding: findings[0] || null,
-    },
-    {
-      area: 'Customers',
-      areaColor: 'text-rose-800 dark:text-rose-300 bg-rose-500/10 border-rose-500/20',
-      headline: 'One account is driving most peak-period cost exposure',
-      finding: findings[1] || null,
-    },
-    {
-      area: 'Operations',
-      areaColor: 'text-sky-800 dark:text-sky-300 bg-sky-500/10 border-sky-500/20',
-      headline: 'Solar underperformance increased grid purchases',
-      finding: findings[2] || null,
-    },
-  ];
-
-  return (
-    <section id="what-needs-attention-section" className="my-5">
-      <div className="flex items-center justify-between mb-2.5 px-0.5">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
-          What Needs Your Attention
-        </h2>
-      </div>
-
-      <div className="rounded-xl border bg-white dark:bg-[#181c20] border-stone-200/90 dark:border-[#262c34] divide-y divide-stone-100 dark:divide-[#242a32] shadow-xs">
-        {alerts.map((alert, idx) => (
-          <div
-            key={idx}
-            id={`attention-alert-row-${idx}`}
-            className="p-3 sm:p-3.5 flex items-center justify-between gap-3 hover:bg-stone-50/70 dark:hover:bg-[#1e2329] transition-colors group"
-          >
-            <div className="flex items-center gap-3 min-w-0">
-              <span
-                className={`text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-md shrink-0 border ${alert.areaColor}`}
-              >
-                {alert.area}
-              </span>
-
-              <span className="text-xs sm:text-[13px] font-medium text-stone-800 dark:text-stone-200 truncate">
-                {alert.headline}
-              </span>
-            </div>
-
-            {alert.finding && (
-              <button
-                onClick={() => onInvestigate(alert.finding!)}
-                className="inline-flex items-center gap-1 text-xs font-medium text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 shrink-0 transition cursor-pointer px-2 py-1 rounded-md hover:bg-stone-100 dark:hover:bg-[#262c35]"
-              >
-                <span>Investigate</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-              </button>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+// Short labels for the seeded case studies; detail always opens the original record.
+const summaries: Record<string, { title: string; action: string }> = {
+  'finding-1': { title: 'R1.15M awaiting sign-off', action: 'Paarl · Confirm municipal approval to release billing.' },
+  'finding-2': { title: 'Protea margin fell to 11.2%', action: 'Review fuel pricing or additional battery storage.' },
+  'finding-3': { title: 'R42,000 potential savings', action: 'Stellenbosch · Review shifting cooling to solar hours.' },
 };
+
+export const AttentionSection: React.FC<AttentionSectionProps> = ({ findings, hasUploadedFiles, onInvestigate, onOpenUpload }) => (
+  <section id="what-needs-attention-section" className="my-6">
+    <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+      <h2 className="text-base font-semibold text-stone-800 dark:text-stone-100">What needs your attention</h2>
+      {hasUploadedFiles && <span className="text-sm text-stone-600 dark:text-stone-400">{findings.length} items · sample schedule</span>}
+    </div>
+    {!hasUploadedFiles ? (
+      <button onClick={onOpenUpload} className="w-full p-5 rounded-xl border border-dashed border-stone-300 dark:border-stone-600 text-left text-base text-stone-600 dark:text-stone-300 flex items-center gap-3">
+        <UploadCloud className="w-5 h-5 shrink-0" /> Load sample files to see attention items.
+      </button>
+    ) : (
+      <div className="rounded-xl border border-stone-300 dark:border-[#38424e] bg-white dark:bg-[#1b222a] divide-y divide-stone-200 dark:divide-[#38424e] overflow-hidden">
+        {findings.map((finding, idx) => {
+          const summary = summaries[finding.id];
+          const next = finding.timeline.find(item => item.status === 'pending');
+          const styles = finding.severity === 'critical'
+            ? 'text-amber-800 bg-amber-100 dark:text-amber-200 dark:bg-amber-400/15'
+            : finding.severity === 'watch'
+              ? 'text-rose-800 bg-rose-100 dark:text-rose-200 dark:bg-rose-400/15'
+              : 'text-sky-800 bg-sky-100 dark:text-sky-200 dark:bg-sky-400/15';
+          return (
+            <button key={finding.id} id={`attention-alert-row-${idx}`} onClick={() => onInvestigate(finding)} className="w-full p-4 sm:p-5 text-left flex items-center gap-4 hover:bg-stone-50 dark:hover:bg-[#252e39] transition-colors group">
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap gap-2 items-center mb-2">
+                  <span className={`px-2 py-1 rounded-md text-sm font-semibold ${styles}`}>{finding.severity === 'critical' ? 'Priority' : finding.severity === 'watch' ? 'Watch' : 'Opportunity'}</span>
+                  {next && <span className="text-sm text-stone-600 dark:text-stone-300">Scheduled: {next.date} 2026</span>}
+                </div>
+                <h3 className="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100">{summary?.title || finding.title}</h3>
+                <p className="text-sm sm:text-base mt-1 leading-relaxed text-stone-600 dark:text-stone-300">{summary?.action || finding.metricImpact}</p>
+              </div>
+              <span className="shrink-0 text-blue-700 dark:text-blue-300 flex items-center gap-2"><span className="hidden sm:inline text-sm">View details</span><ArrowRight aria-hidden="true" className="w-5 h-5" /></span>
+            </button>
+          );
+        })}
+      </div>
+    )}
+  </section>
+);

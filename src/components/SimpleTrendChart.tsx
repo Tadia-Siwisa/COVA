@@ -51,19 +51,19 @@ export const SimpleTrendChart: React.FC<SimpleTrendChartProps> = ({
         id="performance-trend-chart-section"
         className="my-5 p-5 rounded-xl border border-dashed border-stone-300 dark:border-[#2b333e] bg-stone-50/50 dark:bg-[#14171a] shadow-xs text-center flex flex-col items-center justify-center py-12"
       >
-        <span className="text-xs font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-500 mb-2">
+        <span className="text-sm font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-400 mb-2">
           12-Month Performance Trend
         </span>
         <h3 className="font-editorial text-xl font-semibold text-stone-700 dark:text-stone-300 mb-1">
           No data yet
         </h3>
-        <p className="text-xs text-stone-500 dark:text-stone-400 max-w-md mb-4">
+        <p className="text-sm text-stone-500 dark:text-stone-400 max-w-md mb-4">
           Historical trend chart will generate once general ledger and monthly trial balances are ingested.
         </p>
         <button
           type="button"
           onClick={onOpenUpload}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 text-xs font-semibold hover:bg-stone-800 dark:hover:bg-white transition cursor-pointer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 text-sm font-semibold hover:bg-stone-800 dark:hover:bg-white transition cursor-pointer"
         >
           <UploadCloud className="w-3.5 h-3.5" />
           <span>Upload files to build this view</span>
@@ -83,7 +83,7 @@ export const SimpleTrendChart: React.FC<SimpleTrendChartProps> = ({
       {/* Header: Title and Metric Toggle */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div>
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
             Revenue & Profit Performance: Oct 2025 – Sep 2026
           </h2>
         </div>
@@ -93,7 +93,7 @@ export const SimpleTrendChart: React.FC<SimpleTrendChartProps> = ({
           <button
             id="toggle-trend-revenue-btn"
             onClick={() => setSelectedMetric('revenue')}
-            className={`px-3 py-1 text-xs font-medium rounded-md transition cursor-pointer ${
+            className={`px-3 py-1 text-sm font-medium rounded-md transition cursor-pointer ${
               isRevenue
                 ? 'bg-white dark:bg-[#2a323d] text-stone-900 dark:text-stone-100 shadow-xs font-semibold'
                 : 'text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200'
@@ -104,7 +104,7 @@ export const SimpleTrendChart: React.FC<SimpleTrendChartProps> = ({
           <button
             id="toggle-trend-profit-btn"
             onClick={() => setSelectedMetric('profit')}
-            className={`px-3 py-1 text-xs font-medium rounded-md transition cursor-pointer ${
+            className={`px-3 py-1 text-sm font-medium rounded-md transition cursor-pointer ${
               !isRevenue
                 ? 'bg-white dark:bg-[#2a323d] text-stone-900 dark:text-stone-100 shadow-xs font-semibold'
                 : 'text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200'
@@ -155,8 +155,8 @@ export const SimpleTrendChart: React.FC<SimpleTrendChartProps> = ({
                 if (active && payload && payload.length) {
                   const data = payload[0].payload as MonthlyDataPoint;
                   return (
-                    <div className="p-2.5 rounded-lg bg-stone-900 text-stone-100 dark:bg-[#121518] dark:text-stone-100 border border-stone-700 dark:border-[#2e3743] shadow-lg text-xs font-mono-numbers">
-                      <div className="text-[11px] text-stone-400 font-sans mb-1 font-medium">
+                    <div className="p-2.5 rounded-lg bg-stone-900 text-stone-100 dark:bg-[#121518] dark:text-stone-100 border border-stone-700 dark:border-[#2e3743] shadow-lg text-sm font-mono-numbers">
+                      <div className="text-sm text-stone-400 font-sans mb-1 font-medium">
                         {data.month}
                       </div>
                       <div className="font-semibold text-stone-100 text-sm">
@@ -164,7 +164,7 @@ export const SimpleTrendChart: React.FC<SimpleTrendChartProps> = ({
                           ? `Total Revenue: R${data.revenue.toFixed(2)}M`
                           : `Operating Profit: R${data.profit.toFixed(2)}M`}
                       </div>
-                      <div className="text-[11px] text-stone-400 mt-0.5">
+                      <div className="text-sm text-stone-400 mt-0.5">
                         Operating Margin: {data.marginPct}%
                       </div>
                     </div>

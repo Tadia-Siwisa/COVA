@@ -110,13 +110,11 @@ const emptyMetrics: HighLevelMetric[] = [
 export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     try {
-      const saved = localStorage.getItem('nala_theme');
+      const saved = localStorage.getItem('cova_theme');
       if (saved === 'dark' || saved === 'light') return saved;
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
+      return 'dark';
     } catch {
-      return 'light';
+      return 'dark';
     }
   });
 
@@ -164,7 +162,7 @@ export default function App() {
       document.documentElement.classList.remove('dark');
     }
     try {
-      localStorage.setItem('nala_theme', theme);
+      localStorage.setItem('cova_theme', theme);
     } catch {
       // ignore
     }
@@ -565,7 +563,7 @@ export default function App() {
         </div>
       )}
 
-      <div className="px-4 py-2 text-center text-xs bg-stone-100 dark:bg-[#20262f] text-stone-600 dark:text-stone-300">Portfolio demo · Nala Energy is fictional. Figures, freshness labels, uploads and chat examples are simulated.</div>
+      <div className="px-4 py-2 text-center text-xs bg-stone-100 dark:bg-[#20262f] text-stone-600 dark:text-stone-300">Portfolio demo · Fictional company and figures. Uploads and chat are simulated.</div>
       {/* Top Navigation & Workspace Controls */}
       <Navbar
         currentPerspective={currentPerspective}
@@ -583,7 +581,7 @@ export default function App() {
         isIntelligenceActive={isDiscussOpen}
         hasUploadedFiles={hasUploadedFiles}
         openActionsCount={unresolvedActionsCount}
-        lastUpdated="07:15 SAST"
+        lastUpdated="September 2026"
         theme={theme}
         onToggleTheme={toggleTheme}
       />
@@ -600,7 +598,7 @@ export default function App() {
         ) : (
           <>
             {/* Quick state switcher bar for reviewer convenience */}
-            <div className="flex items-center justify-between mb-4 pb-2 text-xs border-b border-stone-200/50 dark:border-[#22272e]">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 text-sm border-b border-stone-200/50 dark:border-[#22272e]">
               <div className="flex items-center gap-2">
                 <span
                   className={`w-2 h-2 rounded-full ${
@@ -608,9 +606,9 @@ export default function App() {
                   }`}
                 />
                 <span className="text-stone-500 dark:text-stone-400">
-                  Status:{' '}
+                  As of:{' '}
                   <strong className="text-stone-800 dark:text-stone-200">
-                    {hasUploadedFiles ? 'Fictional Sample Data' : 'Empty State (Awaiting Files)'}
+                    {hasUploadedFiles ? 'September 2026 · Demo' : 'No data · Awaiting files'}
                   </strong>
                 </span>
               </div>
@@ -632,7 +630,7 @@ export default function App() {
                     title="Reset to true empty state"
                   >
                     <RotateCcw className="w-3 h-3" />
-                    <span>Reset to Empty State</span>
+                    <span className="hidden sm:inline">Try empty view</span>
                   </button>
                 )}
               </div>
@@ -665,7 +663,7 @@ export default function App() {
                       Overview
                     </h1>
                     <p className="text-xs text-stone-600 dark:text-stone-400 mt-0.5">
-                      Executive synthesis of current financial, operational, and customer performance.
+                      The business at a glance.
                     </p>
                   </div>
                   <PageHeaderActions
@@ -694,6 +692,15 @@ export default function App() {
                     sourceFileHint="General_Ledger.xlsx"
                   />
                 </div>
+
+                {hasUploadedFiles && (
+                  <div className="snapshot-note rounded-xl border border-blue-200 dark:border-blue-400/30 bg-blue-50 dark:bg-[#192735] p-4 sm:p-5">
+                    <p className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-1">At a glance</p>
+                    <p className="text-base sm:text-lg leading-relaxed text-stone-900 dark:text-stone-100">
+                      Revenue {metricsData.find(m => m.id === 'revenue')?.value}; liquid cash {metricsData.find(m => m.id === 'cash')?.value}. Review the cash bottleneck below.
+                    </p>
+                  </div>
+                )}
 
                 {/* 1. Key Financial Metrics with Source buttons */}
                 <MetricsRow

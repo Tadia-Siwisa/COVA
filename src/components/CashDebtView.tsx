@@ -66,7 +66,7 @@ export const CashDebtView: React.FC<CashDebtViewProps> = ({
             <h1 className="font-editorial text-xl sm:text-2xl font-semibold text-stone-900 dark:text-stone-100">
               Cash Flow & Debt
             </h1>
-            <p className="text-xs text-stone-600 dark:text-stone-400 mt-1">
+            <p className="text-sm text-stone-600 dark:text-stone-400 mt-1">
               Monthly cash movements, liquidity runway, and senior debt covenant compliance.
             </p>
           </div>
@@ -85,44 +85,44 @@ export const CashDebtView: React.FC<CashDebtViewProps> = ({
         {/* Runway Summary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 my-5">
           <div className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Liquid Cash</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Liquid Cash</span>
             <div className="flex items-baseline gap-2 mt-1">
               <span className="font-editorial text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                 R1.85M
               </span>
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">
               R1.42M Operating + R430k Covenant DSRA
             </span>
           </div>
 
           <div className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Current Runway</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Current Runway</span>
             <div className="flex items-baseline gap-2 mt-1">
               <span className="font-editorial text-xl sm:text-2xl font-bold text-amber-700 dark:text-amber-400">
                 42 Days
               </span>
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">
               Based on net monthly burn of R44,000/day
             </span>
           </div>
 
           <div className="p-3.5 rounded-xl bg-stone-50 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-            <span className="text-xs text-stone-600 dark:text-stone-400 block font-medium">Projected Runway</span>
+            <span className="text-sm text-stone-600 dark:text-stone-400 block font-medium">Projected Runway</span>
             <div className="flex items-baseline gap-2 mt-1">
               <span className="font-editorial text-xl sm:text-2xl font-bold text-emerald-700 dark:text-emerald-400">
                 68 Days
               </span>
             </div>
-            <span className="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5 block">
+            <span className="text-sm text-stone-600 dark:text-stone-400 mt-0.5 block">
               Following Paarl milestone release (R1.15M)
             </span>
           </div>
         </div>
 
         {/* Key Risk (Renamed from Material Risk Callout, concise) */}
-        <div className="my-4 p-3.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm text-stone-800 dark:text-stone-200 leading-relaxed flex items-start gap-2.5">
+        <div className="my-4 p-3.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-sm sm:text-sm text-stone-800 dark:text-stone-200 leading-relaxed flex items-start gap-2.5">
           <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
           <div>
             <strong className="font-semibold text-amber-900 dark:text-amber-300">
@@ -134,13 +134,13 @@ export const CashDebtView: React.FC<CashDebtViewProps> = ({
 
         {/* Familiar Cash-Flow Structure Table */}
         <div className="mt-6 pt-4 border-t border-stone-100 dark:border-[#262c34]">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-3">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-3">
             Monthly Cash-Flow Statement (September 2026)
           </h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs border-collapse min-w-[500px]">
+            <table className="w-full text-left text-sm border-collapse min-w-[500px]">
               <thead>
-                <tr className="border-b border-stone-200 dark:border-[#2b333e] text-stone-600 dark:text-stone-400 font-semibold uppercase tracking-wider text-[11px]">
+                <tr className="border-b border-stone-200 dark:border-[#2b333e] text-stone-600 dark:text-stone-400 font-semibold uppercase tracking-wider text-sm">
                   <th className="py-2.5 px-3">Flow Item</th>
                   <th className="py-2.5 px-3 text-right">Amount (ZAR)</th>
                 </tr>
@@ -183,32 +183,32 @@ export const CashDebtView: React.FC<CashDebtViewProps> = ({
 
         {/* Debt Facilities & Covenants */}
         <div className="mt-8 pt-5 border-t border-stone-100 dark:border-[#262c34]">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-3">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-3">
             Debt Facilities & Covenants
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
             <div className="p-3.5 rounded-lg bg-stone-50/80 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-              <span className="text-stone-500 dark:text-stone-400 block text-[11px]">DBSA Senior Concessional Debt</span>
+              <span className="text-stone-500 dark:text-stone-400 block text-sm">DBSA Senior Concessional Debt</span>
               <span className="font-mono-numbers font-bold text-stone-900 dark:text-stone-100 text-sm">
                 R3,420,000
               </span>
-              <span className="text-[10px] text-stone-500 block mt-0.5">Prime - 1.25%, amortizing monthly</span>
+              <span className="text-sm text-stone-500 block mt-0.5">Prime - 1.25%, amortizing monthly</span>
             </div>
 
             <div className="p-3.5 rounded-lg bg-stone-50/80 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-              <span className="text-stone-500 dark:text-stone-400 block text-[11px]">Debt Service Coverage Ratio (DSCR)</span>
+              <span className="text-stone-500 dark:text-stone-400 block text-sm">Debt Service Coverage Ratio (DSCR)</span>
               <span className="font-mono-numbers font-bold text-emerald-700 dark:text-emerald-400 text-sm">
                 1.78x
               </span>
-              <span className="text-[10px] text-stone-500 block mt-0.5">Compliant (1.30x covenant minimum)</span>
+              <span className="text-sm text-stone-500 block mt-0.5">Compliant (1.30x covenant minimum)</span>
             </div>
 
             <div className="p-3.5 rounded-lg bg-stone-50/80 dark:bg-[#1f252d] border border-stone-200/70 dark:border-[#2b333e]">
-              <span className="text-stone-500 dark:text-stone-400 block text-[11px]">Undrawn Facility Headroom</span>
+              <span className="text-stone-500 dark:text-stone-400 block text-sm">Undrawn Facility Headroom</span>
               <span className="font-mono-numbers font-bold text-stone-900 dark:text-stone-100 text-sm">
                 R4,800,000
               </span>
-              <span className="text-[10px] text-stone-500 block mt-0.5">Available for capex draws</span>
+              <span className="text-sm text-stone-500 block mt-0.5">Available for capex draws</span>
             </div>
           </div>
         </div>
@@ -217,10 +217,10 @@ export const CashDebtView: React.FC<CashDebtViewProps> = ({
         <div className="mt-8 pt-6 border-t border-stone-100 dark:border-[#262c34]">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400">
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-400">
                 Cash Balance Trend (Historical & Projected)
               </h2>
-              <span className="text-xs text-stone-600 dark:text-stone-400">Liquid reserves in Millions ZAR</span>
+              <span className="text-sm text-stone-600 dark:text-stone-400">Liquid reserves in Millions ZAR</span>
             </div>
           </div>
 
